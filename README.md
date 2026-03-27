@@ -72,6 +72,12 @@ then
 Press the button of your device so it go into BOOTSEL mode
 While holding the button plug in your usb into it 
 
+### Unmount 
+Once you unmount your device 
+Your PC/laptop wont detect it anymore ( as no files are being send anymore ) - you have to talk to it for the PC to recognise it 
+Cause right now its just supplying power to the device 
+
+
 
 
 
