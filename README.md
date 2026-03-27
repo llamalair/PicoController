@@ -30,9 +30,9 @@ sudo mkdir -p /mnt/pico
 ```
 
 Mount the sda1 ( scsi disk , a,b,c the order detected , 1,2,3 the partition ) from dev ( device entry points into devices managed by the kernel ) 
-sda vs sda1 
-sda : is just the metadata describing the partition 
-sda1 : is the 1st partition ( the real file system )
+sda vs sda1   
+sda : is just the metadata describing the partition   
+sda1 : is the 1st partition ( the real file system )  
 ```bash
 sudo mount /dev/sda1 /mnt/pico
 ```
@@ -57,32 +57,32 @@ But ussually it should unmount on its own
 **Three main of doing that:** 
 
 1. Thornny: ( Python )7.0
-Download the RPI_PICO-2O251209-v1.2.uf2 (something along the lines of this) from the website depending on your raspberry pi model 
-pico and picoWH is different
-Once you download it drag and drop the file into your device , or manually flash it 
-Then you can use Thornny to talk to it 
+Download the RPI_PICO-2O251209-v1.2.uf2 (something along the lines of this) from the website depending on your raspberry pi model  
+pico and picoWH is different  
+Once you download it drag and drop the file into your device , or manually flash it   
+Then you can use Thornny to talk to it   
 
 2. Visual Studio Code Extension: ( C/C++ )
 Download the RaspberryPi Extension then press the button and follow the instruction, then compile it 
 
 3. Manually Flashing it: ( C/C++ )
-mkdir a new folder 
-gitclone the raspberrypi repo 
-cp the Cmakelist.txt out 
-install all the require compiler (cmake)
-then compile it 
-it should create a build folder 
+mkdir a new folder  
+gitclone the raspberrypi repo   
+cp the Cmakelist.txt out   
+install all the require compiler (cmake)  
+then compile it   
+it should create a build folder   
 then 
 .make the build to create the .uf2 file 
 
 ### Flashing your file into the device 
-Press the button of your device so it go into BOOTSEL mode
+Press the button of your device so it go into BOOTSEL mode  
 While holding the button plug in your usb into it 
 
 ### Unmount 
-Once you unmount your device 
-Your PC/laptop wont detect it anymore ( as no files are being send anymore ) - you have to talk to it for the PC to recognise it 
-Cause right now its just supplying power to the device 
+Once you unmount your device  
+Your PC/laptop wont detect it anymore ( as no files are being send anymore ) - you have to talk to it for the PC to recognise it  
+Cause right now its just supplying power to the device  
 
 
 # Software 
