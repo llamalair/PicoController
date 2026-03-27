@@ -12,7 +12,7 @@ To be improved on :
 <img width="1258" height="581" alt="image" src="https://github.com/user-attachments/assets/bede83b4-088e-4a00-9b82-1982a93fbaa0" />
 
 
-User Stories: 
+User Instruction: 
 
 1. Mounting a device 
 
