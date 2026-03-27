@@ -28,7 +28,10 @@ Create a file in mnt ( mount - temporary location to attach file system ) ( -p m
 sudo mkdir -p /mnt/pico 
 ```
 
-Mount the sda1 ( scsi disk , a the order detected , 1 the partition ) from dev ( device entry points into devices managed by the kernel ) 
+Mount the sda1 ( scsi disk , a,b,c the order detected , 1,2,3 the partition ) from dev ( device entry points into devices managed by the kernel ) 
+sda vs sda1 
+sda : is just the metadata describing the partition 
+sda1 : is the 1st partition ( the real file system )
 ```bash
 sudo mount /dev/sda1 /mnt/pico
 ```
