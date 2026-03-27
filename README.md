@@ -91,6 +91,29 @@ Device talk to PC through USB using SerielPort library ( You have to download th
 
 WPF Part of it:
 
+Two main file : 
+
+MainWindow.xaml : ( Like the UI , like how html work )  
+Essentially the only important is the Click="LedOn" and Click="LedOff" which will call the codebehind 
+
+
+MainWindow.xaml.cs : ( The codebehind , like how javacscript work )  
+Important section of the code are : 
+
+*public Mainwindow()*
+first it initialise the component 
+then it create a new object of type SerialPort ( a class you have to read the documentation to understand most of it) , rn the only thing important is the portName 
+and set the properties ( attributes ) of the DTR as true 
+then call open the connection using the predined SerialPort method 
+
+
+*public void LedOn()*
+.WriteLine("1") : this essentially send 1 from the usb into the device 
+and when the device recieve 1 it will turn the light on 
+
+*public void LedOff()*
+.WriteLine("0") : vice versa 
+when the device receive 0 it will turn the lights off 
 
 
 
