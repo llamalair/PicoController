@@ -7,6 +7,7 @@ namespace connectToHardware.Model
     public class PicoState 
     {
         public string Status { get; set; } = "OFF";
+        public string RealStatus {  get; set; } = string.Empty;
 
 
 
