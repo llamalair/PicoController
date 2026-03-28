@@ -11,7 +11,7 @@
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="{Binding Status}" />
+        <TextBlock Text="{Binding ErrorMessage}" />
         <TextBlock Text="{Binding RealStatus}" Grid.Column="1"/>
 
         <Button Content="ON"

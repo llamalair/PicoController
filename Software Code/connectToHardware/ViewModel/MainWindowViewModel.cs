@@ -28,9 +28,9 @@ namespace connectToHardware.ViewModel
         public event PropertyChangedEventHandler? PropertyChanged; // this is an event ( an event is something that people can subscribe to and it will notify PropertyChanged when something change 
 
         // you want it to be already there so you get it at the start 
-        public string Status
+        public string ErrorMessage
         {
-            get => pico.Status; // this runs when someone read the property , it will get the current status 
+            get => pico.ErrorMessage; // this runs when someone read the property , it will get the current status 
             set
             {
                 //if (value != status)
@@ -42,8 +42,8 @@ namespace connectToHardware.ViewModel
                 // is essentially the same thing as below if you create a helper method NotifyPropertyChanged() which implemenet PropertyChanged?.Invoke(this.new PropertyChange....)
 
 
-                pico.Status = value; // then it will set the current status as this 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status))); // then notify the ui that the status is changed ( by raising PropertyChanged ) 
+                pico.ErrorMessage = value; // then it will set the current status as this 
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ErrorMessage))); // then notify the ui that the status is changed ( by raising PropertyChanged ) 
             }
         }
 
@@ -76,20 +76,44 @@ namespace connectToHardware.ViewModel
         }
 
 
-        
+        private int count = 0;
 
         // two private method 
         private void TurnOn() 
         {
             
-            Status = "ON"; // update the model to run on 
-            RealStatus = service.LedOn(); // tell the service to run Led.On 
+            if (RealStatus == "ON")
+            {
+                count++;
+                ErrorMessage = "ALREADY ON ( NO MESSAGE SEND ) spam count =  " + count;
+                return;
+            }
+
+            // always use .Trim() for seriel replies 
+
+            RealStatus = service.LedOn().Trim(); // tell the service to run Led.On 
+            ErrorMessage = "";
+            count = 0;
+            
+            
+            
+            
         }
 
         private void TurnOff()
         {
-            RealStatus = service.LedOff();
-            Status = "OFF";
+            if (RealStatus == "OFF")
+            {
+                count++;
+                ErrorMessage = "ALREADY OFF ( NO MESSAGE SENT ) spam count = " + count ;
+                return;
+            }
+
+            RealStatus = service.LedOff().Trim(); // tell the service to run Led.On 
+            ErrorMessage = "";
+            count = 0;
+
+
         }
 
         //private string ReadMeFast()

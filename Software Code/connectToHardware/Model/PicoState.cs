@@ -6,7 +6,7 @@ namespace connectToHardware.Model
     // so if its turn on it will be "ON"
     public class PicoState 
     {
-        public string Status { get; set; } = "OFF";
+        public string ErrorMessage { get; set; } = string.Empty;
         public string RealStatus {  get; set; } = string.Empty;
 
 
