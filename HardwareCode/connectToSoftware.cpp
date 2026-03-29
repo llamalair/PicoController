@@ -22,27 +22,35 @@ int main()
     while (true){
 
         pico_set_led(25, stdio_usb_connected());
-        int user_input = getchar();
+        int user_input = getchar_timeout_usb(0);
         
 
         if (user_input == '0' ){
             pico_set_led(13,false);
+            printf(BlueLedIsOff\n);
         }
         else if (user_input == '1'){
             pico_set_led(13,true);
+            printf(BlueLedIsOn\n);
         }
         else if (user_input == '2'){
             pico_set_led(14,false);
+            printf(RedLedIsOff\n);
         }
         else if (user_input == '3'){
             pico_set_led(14,true);
+            printf(RedLedIsOn\n);
         }
         else if (user_input == '4'){
             pico_set_led(15,false);
+            printf(YellowLedIsOff\n);
         }
         else if (user_input == '5'){
             pico_set_led(15,true);
+            printf(YellowLedIsOn\n);
         }
+
+        sleep_ms(10);
 
     }
 }
