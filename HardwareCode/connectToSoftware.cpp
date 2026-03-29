@@ -22,7 +22,7 @@ int main()
     while (true){
 
         pico_set_led(25, stdio_usb_connected());
-        int user_input = getchar_timeout_us(0); // use the timeout_us so its non_blocking 
+        int user_input = getchar()
         
 
         if (user_input == '0' ){
@@ -44,6 +44,5 @@ int main()
             pico_set_led(15,true);
         }
 
-        sleep_ms(10); // must poll no other way for it to work 
     }
 }
