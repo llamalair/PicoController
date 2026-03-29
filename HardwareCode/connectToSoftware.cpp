@@ -22,7 +22,7 @@ int main()
     while (true){
 
         pico_set_led(25, stdio_usb_connected());
-        int user_input = getchar()
+        int user_input = getchar();
         
 
         if (user_input == '0' ){
