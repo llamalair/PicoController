@@ -27,6 +27,7 @@
                     Margin="0,0,8,0"
                
                     Command="{Binding OnCommand}"
+                        <!-- so when you press the button you invoke the command and it goes to the OnCommand which iimplement ICommand interface -->
                         <!-- this is the invoker from the command design pattern --> 
                         <!-- the button doesnt know how to turn the hardware on , it just know how to invoke a command--> 
                         
