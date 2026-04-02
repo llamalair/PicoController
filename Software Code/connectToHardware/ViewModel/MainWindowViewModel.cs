@@ -39,7 +39,7 @@ namespace connectToHardware.ViewModel
         private PicoState pico = new PicoState();// create the state object 
 
         // command design pattern 
-        
+        // ICommand is the command interface 
         public ICommand OnCommand { get;} // create the command that run on command 
         public ICommand OffCommand { get;} // create the commadn that run off command 
 
@@ -89,6 +89,8 @@ namespace connectToHardware.ViewModel
         public MainWindowViewModel()
         {
             service = new Service();
+            // RelayCommand is the Concreate Command 
+            // Creating concreate command objects 
             OnCommand = new RelayCommand(TurnOn);
             OffCommand = new RelayCommand(TurnOff);
 
@@ -98,6 +100,9 @@ namespace connectToHardware.ViewModel
         private int count = 0;
 
         // two private method 
+        // the receiver in the command design pattern 
+        // the parts where they actally know how to do the work 
+        // but the ultimate receiver is actually in the service as it call service , but concept wise this is the receiver 
         private void TurnOn() 
         {
             
