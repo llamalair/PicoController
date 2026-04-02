@@ -10,8 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+// The ViewModel implements the Mediator Design Pattern 
+// Mediator centralises communication between objects 
+// So instead of View talking directly to Model , vice versa 
+// Mediator acts as the middle man between them 
+// Improve decoupling 
+// Cause without a mediator, if the view talk to model there will be alot of dependency 
+
+
 // essentially replacing the code behind ( the MainWindow.xaml.cs file ) 
 // must use data binding 
+
+
 
 namespace connectToHardware.ViewModel
 {
