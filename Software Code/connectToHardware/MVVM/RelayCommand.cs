@@ -6,6 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+// RelayCommand utilises the command design pattern 
+// Essentially it turns a command into an object 
+// This way you can pass the command around, stored, queued, logged, or undone.
+
+// The GoF Command pattern encapsulates a request as an object, allowing requests to be parameterized, queued, logged, and undone, 
+// while decoupling the sender of the request from the receiver that performs it.
+
 namespace connectToHardware.MVVM
 {
     // RelayCommand is essentially just a generic wrapper around a method 
