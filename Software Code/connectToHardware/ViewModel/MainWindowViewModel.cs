@@ -39,6 +39,7 @@ namespace connectToHardware.ViewModel
         private PicoState pico = new PicoState();// create the state object 
 
         // command design pattern 
+        
         public ICommand OnCommand { get;} // create the command that run on command 
         public ICommand OffCommand { get;} // create the commadn that run off command 
 
