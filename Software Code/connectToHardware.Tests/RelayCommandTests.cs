@@ -7,7 +7,7 @@ namespace connectToHardware.Tests
 {
     public class RelayCommandTests
     {
-        [Fact]
+        [Fact] // to tell Xunit that this is a method that needs testing
         public void Execute_CallsProvidedAction()
         {
             bool wasCalled = false;
