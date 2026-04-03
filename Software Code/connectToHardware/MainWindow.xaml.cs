@@ -2,7 +2,8 @@
 using System.IO.Ports;
 using System.Windows;
 
-namespace PicoSerialWpf
+namespace connectToHardware
+
 {
     public partial class MainWindow : Window
     {

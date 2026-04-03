@@ -1,33 +1,83 @@
-﻿<Window x:Class="PicoSerialWpf.MainWindow"
+﻿<Window x:Class="connectToHardware.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PicoSerialWpf"
+        xmlns:local="clr-namespace:connectToHardware"
         Title="Pico Serial Control" Height="450" Width="800">
     <Grid>
+		<!-- Message side content -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="{Binding ErrorMessage}" />
-        <TextBlock Text="{Binding RealStatus}" Grid.Column="1"/>
 
-        <Button Content="ON"
-                    Width="50"
+		<TextBlock Text="{Binding ErrorMessage}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+		<TextBlock Text="{Binding RealStatus}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+		
+		<!-- Button side content -->
+		<Grid Grid.Column="1">
+		    <Grid.RowDefinitions>
+			    <RowDefinition Height="0.2*"/>
+			    <RowDefinition Height="0.2*"/>
+			    <RowDefinition Height="0.2*"/>
+		    </Grid.RowDefinitions>
+			<Button Content="BLUE ON"
+                    Width="100"
                     Height="30"
-                    Margin="0,0,8,0"
-               
-                    Command="{Binding OnCommand}"
-                    Grid.Column="0"/>
+					Margin="0,0,8,0"
+                    Command="{Binding BOnCommand}"
+                    Grid.Column="1"
+					HorizontalAlignment="Left"
+			        Grid.Row="0"/>
 
-        <Button Content="OFF"
-                    Width="50"
-                    Height="30"
-                    Margin="0,0,8,0"
-               
-                    Command="{Binding OffCommand}"
-                    Grid.Column="1"/>
+			<Button Content="BLUE OFF"
+					Width="100"
+					Height="30"
+					Margin="0,0,8,0"
+					Command="{Binding BOffCommand}"
+					Grid.Column="1"
+					HorizontalAlignment="Right"
+					Grid.Row="0"/>
+
+			<Button Content="RED ON"
+					Width="100"
+					Height="30"
+					Margin="0,0,8,0"
+					Command="{Binding ROnCommand}"
+					HorizontalAlignment="Left"
+					Grid.Column="1"
+					Grid.Row="1"/>
+
+			<Button Content="RED OFF"
+					Width="100"
+					Height="30"     
+					Margin="0,0,8,0"
+					Command="{Binding ROffCommand}"
+					HorizontalAlignment="Right"
+					Grid.Column="1"
+					Grid.Row="1"/>
+			
+			<Button Content="YELLOW ON"
+					Width="100"
+					Height="30"
+					Margin="0,0,8,0"
+					Command="{Binding YOnCommand}"
+					HorizontalAlignment="Left"
+					Grid.Column="1"
+					Grid.Row="2"/>
+
+			<Button Content="YELLOW OFF"
+					Width="100"
+					Height="30"
+					Margin="0,0,8,0"
+					Command="{Binding YOffCommand}"
+					HorizontalAlignment="Right"
+					Grid.Column="1"
+					Grid.Row="2"/>
+		</Grid>
+		
+        
     </Grid>
 </Window>

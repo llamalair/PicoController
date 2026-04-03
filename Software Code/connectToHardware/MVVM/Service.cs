@@ -27,7 +27,7 @@ namespace connectToHardware.MVVM
             raspberryConnection.Open();
         }
 
-        public string LedOn() 
+        public string BLedOn() 
         {
             // writeline is one of SerialPort method 
             raspberryConnection.WriteLine("1"); // you write 1 into the connnection  https://learn.microsoft.com/en-us/dotnet/api/system.io.ports.serialport.writeline?view=net-10.0-pp&utm_
@@ -35,9 +35,39 @@ namespace connectToHardware.MVVM
             return result;
         }
 
-        public string LedOff()
+        public string BLedOff()
         {
             raspberryConnection.WriteLine("0"); // vice versa 
+            result = raspberryConnection.ReadLine();
+            return result;
+        }
+
+        public string RLedOn()
+        {
+            // writeline is one of SerialPort method 
+            raspberryConnection.WriteLine("3"); // you write 1 into the connnection  https://learn.microsoft.com/en-us/dotnet/api/system.io.ports.serialport.writeline?view=net-10.0-pp&utm_
+            result = raspberryConnection.ReadLine();
+            return result;
+        }
+
+        public string RLedOff()
+        {
+            raspberryConnection.WriteLine("2"); // vice versa 
+            result = raspberryConnection.ReadLine();
+            return result;
+        }
+
+        public string YLedOn()
+        {
+            // writeline is one of SerialPort method 
+            raspberryConnection.WriteLine("5"); // you write 1 into the connnection  https://learn.microsoft.com/en-us/dotnet/api/system.io.ports.serialport.writeline?view=net-10.0-pp&utm_
+            result = raspberryConnection.ReadLine();
+            return result;
+        }
+
+        public string YLedOff()
+        {
+            raspberryConnection.WriteLine("4"); // vice versa 
             result = raspberryConnection.ReadLine();
             return result;
         }
