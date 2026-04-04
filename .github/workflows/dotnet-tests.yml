@@ -1,22 +1,27 @@
 name: .NET Tests
+# https://docs.github.com/en/actions/tutorials/build-and-test-code/net 
+# ^^^ for more informatino on how CI work on github actions
 
-on:
+# this essentially mean the test will run whenver we push to main , or we have a pull request to main 
+on: 
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+# what we want out jobs to run on 
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: windows-latest # we want it to run on windowsl latest version 
+    # this way you can write code on linux but still it will test out the version in windows to make sure it works 
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6 # the github action version 
 
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v6 
         with:
-          dotnet-version: '8.0.x'
-
+          dotnet-version: '8.0.x' # semantic version to just get the most updated version 
+      # the commands you use to run your normal testing files 
       - run: dotnet restore "Software Code/connectToHardware.Tests/connectToHardware.Tests.csproj"
 
       - run: dotnet build "Software Code/connectToHardware.Tests/connectToHardware.Tests.csproj" --no-restore
